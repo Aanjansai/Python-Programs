@@ -3,6 +3,7 @@ venv/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 functional/__init__.py
+alogrithms/__init__.py
 __init__.py
 __pycache__
 *.py[cod]
