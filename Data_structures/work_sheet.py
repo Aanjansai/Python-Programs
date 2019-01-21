@@ -1,6 +1,6 @@
 """with open('jack.txt', 'r') as f:
-    ref = f.read()
-    print(ref)
+    read_file = f.read()
+    print(read_file)
 """
 
 

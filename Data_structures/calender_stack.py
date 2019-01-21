@@ -1,3 +1,7 @@
+# author:
+"""A Sai Shree Anjan """
+# task  : Data structures programs
+
 """ Modify the above program to store the Queue in two Stacks. Stack here is also implemented using
     Linked List and not from Collection Library
 """

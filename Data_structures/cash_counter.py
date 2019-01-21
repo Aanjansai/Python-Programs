@@ -1,3 +1,7 @@
+# author:
+"""A Sai Shree Anjan """
+# task  : Data structures programs
+
 """ Desc -> Create a Program which creates Banking Cash Counter where people come in to deposit Cash and withdraw Cash.
     Have an input panel to add people to Queue to either deposit or withdraw money and dequeue the people.
     Maintain the Cash Balance.
@@ -41,9 +45,9 @@ def cash_counter():
 
                 deposit_amount = float(input("Enter the amount to deposit \n"))
 
-                bank_cash = bank_cash + deposit_amount                     # increment bank cash for deposit
+                bank_cash = bank_cash + deposit_amount                 # increment bank cash for deposit
 
-                queue.de_queue()                                           # calling de_queue method to remove the candidate
+                queue.de_queue()                                       # calling de_queue method to remove the candidate
 
             if choose == 2:
 

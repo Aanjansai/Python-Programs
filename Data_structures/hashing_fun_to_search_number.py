@@ -1,3 +1,7 @@
+# author:
+"""A Sai Shree Anjan """
+# task  : Data structures programs
+
 """ Desc -> Create a Slot of 10 to store Chain of Numbers that belong to each Slot to efficiently
     search a number from a given set of number
     I/P -> read a set of numbers from a file and take user input to search a number
