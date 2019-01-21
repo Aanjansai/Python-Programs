@@ -1,3 +1,11 @@
+# author:
+"""A Sai Shree Anjan """
+# task  : Data structures programs
+# since : 14/01/2019
+# to    : 21/01/2019
+
+# importing packages
+
 
 from UtilityMethods import Utility
 import math
@@ -648,6 +656,7 @@ class HashTable:
         """
             This method is used to display content of HashTable data structure.
         """
+        global lines
 
         file = open("/home/admin1/Documents/hashing.txt", "r+")
 
