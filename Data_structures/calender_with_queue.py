@@ -13,7 +13,7 @@ def queue_calender():
         return  :  This method won't return anything
     """
 
-    calender_stack_object = FunctionsOfOperations()  # to create an object for queue calender
+    calender_stack_object = FunctionsOfOperations()             # creating an object for queue calender
 
     try:
 
@@ -31,14 +31,14 @@ def queue_calender():
 
         print("Enter integer only")
 
-    calender_stack_object.calender_queue(month, year)
+    calender_stack_object.calender_queue(month, year)           # calling calender queue method
 
 
 if __name__ == "__main__":
 
     try:
 
-        queue_calender()
+        queue_calender()                                        # calling queue calender method
 
     except UnboundLocalError:
 

@@ -14,9 +14,9 @@ def anagram_in_stack():
 
     print("All prime numbers from 0 - 1000 in ANAGRAM\n")
 
-    logic_object.anagram_stack()
+    logic_object.anagram_stack()                           # calling the anagram stack method to display numbers 0-1000
 
 
 if __name__ == "__main__":
 
-    anagram_in_stack()
+    anagram_in_stack()                                     # calling in main method

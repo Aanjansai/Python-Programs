@@ -12,13 +12,13 @@ def two_d_anagram_runner():
         return: this will return nothing
     """
 
-    logic_obj = FunctionsOfOperations()
+    anagram_object = FunctionsOfOperations()             # creating anagram object
 
     print("prime numbers that are ANAGRAM \n")
 
-    logic_obj.anagram_2d_array()       # function calls
+    anagram_object.anagram_2d_array()                    # calling anagram 2d array method from ds.Utility
 
 
 if __name__ == "__main__":
 
-    two_d_anagram_runner()
+    two_d_anagram_runner()                               # calling anagram runner method

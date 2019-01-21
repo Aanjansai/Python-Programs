@@ -14,33 +14,33 @@ from UtilityMethods.ds_utility import *
 
 def unordered_list():
 
-    """ This method is used to read content of file.
+    """
+        This method is used to read content of file.
         this method also append data into orderedList to perform operation on it
         this method also acts as runner for various method
-        return:nothing
     """
 
-    reference_variable = LinkedList()  # creating an object
+    reference_variable = LinkedList()                       # creating an object for linked list
 
     try:
 
         file = open("jack.txt", "r+")
 
-        list1 = file.readlines()
+        list1 = file.readlines()                            # returns a list containing the lines
 
-        file_string = list1[0]
+        file_string = list1[0]                              # list's 1st element to the string file
 
-        list1 = file_string.split()
+        list1 = file_string.split()                         # returns a list of strings after breaking the given string
 
         for loop in range(0, len(list1)):
 
-            reference_variable.append(list1[loop].strip())
+            reference_variable.append(list1[loop].strip())  # adding item to the list
 
         file.close()
 
         print("Data present in the file: \n")
 
-        file = open("jack.txt", "r+")
+        file = open("jack.txt", "r+")                       # performing read and write operations
 
         list1 = file.readlines()
 
@@ -56,21 +56,20 @@ def unordered_list():
 
     try:
 
-        data = (input("Enter word you are looking for: \n"))
+        data = input("Enter word you are looking for: \n")
 
-    except Exception as e:
+    except ValueError:
 
-        print(e)
         print("Enter string only")
 
-    print(reference_variable.search_item(data))
+    print(reference_variable.search_item(data))             # enter the item to search
 
     print("Updated file contains: \n")
 
-    reference_variable.file_update(data)
+    reference_variable.file_update(data)                    # display the updated file
 
 
 if __name__ == '__main__':
     """ main """
 
-print(unordered_list())
+print(unordered_list())                                     # print the unordered list

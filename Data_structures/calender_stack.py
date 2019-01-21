@@ -11,7 +11,7 @@ def stack_calender():
         return  :  nothing
     """
 
-    calender_stack_object = FunctionsOfOperations()  # creating an object for stack calender
+    calender_stack_object = FunctionsOfOperations()          # creating an object for stack calender
 
     try:
 
@@ -29,14 +29,14 @@ def stack_calender():
 
         print("Enter integer only")
 
-    calender_stack_object.calender_stack(month, year)
+    calender_stack_object.calender_stack(month, year)       # calling calender stack method
 
 
 if __name__ == "__main__":
 
     try:
 
-        stack_calender()
+        stack_calender()                                    # calling stack calender method in main
 
     except UnboundLocalError:
 

@@ -28,8 +28,11 @@ from UtilityMethods.ds_utility import BinarySearchTree
 
 
 def binary_search_tree():
+    """
+        This method is used to count the number of binary trees formed
+    """
 
-    binary_tree = BinarySearchTree()
+    binary_tree = BinarySearchTree()                # creating an object binary tree
 
     try:
 
@@ -43,11 +46,17 @@ def binary_search_tree():
 
         print("enter valid data")
 
-    print("number of binary trees formed ")   # number of possible of tree formation
+    print("number of binary trees formed ")         # number of possible of tree formation
 
-    binary_tree.count(number_of_nodes)
+    binary_tree.count(number_of_nodes)              # calling count method
 
 
 if __name__ == "__main__":
 
-    binary_search_tree()
+    try:
+
+        binary_search_tree()                            # calling binary search tree method
+
+    except UnboundLocalError:
+
+        print("enter valid data")

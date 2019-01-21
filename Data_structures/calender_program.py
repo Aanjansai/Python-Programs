@@ -10,10 +10,9 @@ from UtilityMethods.ds_utility import FunctionsOfOperations
 def calender():
     """
         This method act as runner for calender_queue(month, year)
-        return  :  nothing
     """
 
-    calender_object = FunctionsOfOperations()  # to create an object for calender
+    calender_object = FunctionsOfOperations()           # creating an object for calender
 
     try:
 
@@ -31,14 +30,14 @@ def calender():
 
         print("Enter integer only")
 
-    calender_object.calender(month, year)
+    calender_object.calender(month, year)               # calling calender method from ds.Utility file
 
 
 if __name__ == "__main__":
 
     try:
 
-        calender()
+        calender()                                      # calling calender method
 
     except UnboundLocalError:
 

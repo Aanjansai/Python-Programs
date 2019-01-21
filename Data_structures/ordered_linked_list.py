@@ -10,20 +10,24 @@ from UtilityMethods.ds_utility import OrderedList
 
 
 def ordered_list():
+    """
+        This method is used to read content of file.
+        This method displays the ordered list.
+    """
 
-    ordered_linked_list_obj = OrderedList()
+    ordered_linked_list_obj = OrderedList()                  # creating an object to the ordered list
 
     file = open("/home/admin1/Documents/ordered_list.txt", "r+")
 
-    list1 = file.readlines()
+    list1 = file.readlines()                                 # returns a list containing the lines
 
-    file_string = list1[0]
+    file_string = list1[0]                                   # list's 1st element to the string file
 
-    list1 = file_string.split()
+    list1 = file_string.split()                              # returns a list of strings after breaking the given string
 
     for i in range(0, len(list1)):
 
-        ordered_linked_list_obj.append(list1[i].strip())
+        ordered_linked_list_obj.append(list1[i].strip())     # appending the elements
 
     file.close()
 
@@ -33,23 +37,23 @@ def ordered_list():
 
         data = input("Enter the data to search = ")
 
-    except Exception as ex:
+    except ValueError:
 
-        print(ex)
         print('Enter data in string only')
 
     print(ordered_linked_list_obj.search_item(data))
 
     print("The updated file content are as follows")
 
-    ordered_linked_list_obj.file_update(data)
+    ordered_linked_list_obj.file_update(data)               # display the updated file
 
 
 if __name__ == '__main__':
+
     try:
 
-        ordered_list()
+        ordered_list()                                     # calling the ordered lists
 
-    except Exception as e:
+    except UnboundLocalError:
 
-        print(e)
+        print("enter the valid data")

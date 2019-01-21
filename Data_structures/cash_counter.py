@@ -15,76 +15,85 @@ def cash_counter():
     """ This function is used to display the 'bank cash' by performing all the methods
         return  :  nothing
     """
-    queue = Queue()
+    queue = Queue()                                                    # creating queue object
 
     bank_cash = 1000
 
-    no_of_people = int(input('Enter Number of People in the Queue:\n'))
+    try:
+
+        no_of_people = int(input('Enter Number of People in the Queue:\n'))
+
+    except ValueError:
+
+        print("enter data in number")
 
     for i in range(0, no_of_people):
 
-        queue.enqueue(i)
+        queue.enqueue(i)                                               # calling enqueue method to add candidate
+    try:
+        for i in range(0, queue.size()):
 
-    for i in range(0, queue.size()):
+            print("1. Deposit the amount\n2. Withdraw cash\n")
 
-        print("1. Deposit the amount\n2. Withdraw cash\n")
+            choose = int(input("Enter the your choice\n"))
 
-        choose = int(input("Enter the your choice\n"))
+            if choose == 1:
 
-        if choose == 1:
+                deposit_amount = float(input("Enter the amount to deposit \n"))
 
-            deposit_amount = float(input("Enter the amount to deposit \n"))
+                bank_cash = bank_cash + deposit_amount                     # increment bank cash for deposit
 
-            bank_cash = bank_cash + deposit_amount
+                queue.de_queue()                                           # calling de_queue method to remove the candidate
 
-            queue.de_queue()
+            if choose == 2:
 
-        if choose == 2:
+                withdraw_cash = float(input("Enter the amount to withdraw\n"))
 
-            withdraw_cash = float(input("Enter the amount to withdraw\n"))
+                if withdraw_cash <= bank_cash:
 
-            if withdraw_cash <= bank_cash:
+                    bank_cash = bank_cash - withdraw_cash                  # decrement bank cash for withdraw
 
-                bank_cash = bank_cash - withdraw_cash
+                    queue.de_queue()                                       # calling de_queue to remove the candidate
 
-                queue.de_queue()
+                if withdraw_cash > bank_cash:
 
-            if withdraw_cash > bank_cash:
+                    print("Insufficient bank balance \n")
 
-                print("Insufficient bank balance \n")
+                    print("1. Reenter the amount\n2. cancel the transaction\n")
 
-                print("1. Reenter the amount\n2. cancel the transaction\n")
+                    choice = int(input("Enter your choice\n"))
 
-                choice = int(input("Enter your choice\n"))
+                    if choice == 1:                                        # asking for reenter the amount
 
-                if choice == 1:
+                        if withdraw_cash <= bank_cash:
 
-                    if withdraw_cash <= bank_cash:
+                            withdraw_cash = float(input("Enter the amount to withdraw\n"))
 
-                        withdraw_cash = float(input("Enter the amount to withdraw\n"))
+                            bank_cash = bank_cash - withdraw_cash
 
-                        bank_cash = bank_cash - withdraw_cash
+                            print("Withdraw cash = ", withdraw_cash, "\n")
 
-                        print("Withdraw cash = ", withdraw_cash, "\n")
+                        queue.de_queue()                                   # candidate will leave after the withdraw
 
-                    queue.de_queue()
+                    if choice == 2:                                        # transaction is cancelled
 
-                if choice == 2:
+                        print("Your transaction is cancelled\n")
 
-                    print("Your transaction is cancelled\n")
+                        print("Thank you\n")
 
-                    print("Thank you\n")
+                        queue.de_queue()                                   # candidate will leave after the cancellation
 
-                    queue.de_queue()
+            if i < queue.size():                                           # calling next person
 
-        if i < queue.size():
+                print("Next person \n")
 
-            print("Next person \n")
+        print("Total cash in bank counter = ", bank_cash)
 
-    print("Total cash in bank counter = ", bank_cash)
+    except ValueError:
+        print("enter valid data")
 
 
 if __name__ == '__main__':
     """ main"""
 
-    cash_counter()
+    cash_counter()                                                     # calling cash counter method

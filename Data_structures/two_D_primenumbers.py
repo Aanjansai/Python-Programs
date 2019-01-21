@@ -10,13 +10,13 @@ def two_d_prime():
     """
         This method is act as runner for prime_number_2d_array() method.
     """
-    logic_object = FunctionsOfOperations()
+    tow_d_prime_object = FunctionsOfOperations()                # creating object for 2d prime
 
     print("List all prime numbers\n")
 
-    logic_object.prime_number_2d_array()
+    tow_d_prime_object.prime_number_2d_array()                  # calling prime number method from ds.Utility
 
 
 if __name__ == "__main__":
 
-    two_d_prime()
+    two_d_prime()                                               # calling two D prime method

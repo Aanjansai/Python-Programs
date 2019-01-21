@@ -21,9 +21,9 @@ def hashing_number_run():
 
     print('These are the Numbers in File')
 
-    file = open("/home/admin1/Documents/hashing.txt", "r")
+    file = open("/home/admin1/Documents/hashing.txt", "r")       # open a file to read
 
-    print(file.readline())
+    print(file.readline())                                       # to read file content
 
     try:
 
@@ -33,20 +33,20 @@ def hashing_number_run():
 
         print("Enter Number only")
 
-    hash_object.insert()
+    hash_object.insert()                                         # to add data to the file
 
-    print(hash_object.search(number))
+    print(hash_object.search(number))                            # item to be search in file
 
     print('Now Updated File Content are as Follows')
 
-    hash_object.file_update(number)
+    hash_object.file_update(number)                              # updated file
 
 
 if __name__ == "__main__":
 
     try:
 
-        hashing_number_run()
+        hashing_number_run()                                     # calling the hashing number function
 
     except UnboundLocalError:
 

@@ -10,14 +10,14 @@ def anagram_in_queue():
     """
         This method act as runner for anagram_queue() method.
     """
-    logic_obj = FunctionsOfOperations()
+    anagram_object = FunctionsOfOperations()
 
     print("All prime numbers between 0 - 1000 that are ANAGRAM \n")
 
-    logic_obj.anagram_queue()
+    anagram_object.anagram_queue()                  # calling the anagram queue function to display the numbers 0-1000
 
 
 if __name__ == "__main__":
 
-    anagram_in_queue()
+    anagram_in_queue()                              # calling in main method
 

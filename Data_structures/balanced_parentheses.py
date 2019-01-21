@@ -19,9 +19,9 @@ def is_balanced_parentheses():
     """
 
     symbol_string = [str(loop) for loop in str(input("enter the parentheses to check \n"))]
-    ref_var = Stack()  # object is created and given a reference as ref_var
+    reference_variable = Stack()                   # object is created and given a reference as reference_variable
 
-    balanced = True  # assign boolean value 'True' to the balance variable
+    balanced = True                                # assign boolean value 'True' to the balance variable
 
     index = 0
 
@@ -29,23 +29,23 @@ def is_balanced_parentheses():
 
         symbol = symbol_string[index]
 
-        if symbol == "(" and "[" and "{":  # if symbol are parentheses then perform push operation(adding)
+        if symbol == "(" and "[" and "{":           # if symbol are parentheses then perform push operation(adding)
 
-            ref_var.push(symbol)
+            reference_variable.push(symbol)
 
         else:
 
-            if ref_var.is_empty():
+            if reference_variable.is_empty():
 
-                balanced = False  # if stack is empty then it is false
+                balanced = False                    # if stack is empty then it is false
 
             else:
 
-                ref_var.pop()  # if stack is not empty then perform pop operation(deleting)
+                reference_variable.pop()            # if stack is not empty then perform pop operation(deleting)
 
-        index = index + 1  # increment index
+        index = index + 1                           # increment index
 
-    if balanced and ref_var.is_empty():  # if stack is balanced and empty then return 'True' else 'False'
+    if balanced and reference_variable.is_empty():  # if stack is balanced and empty then return 'True' else 'False'
 
         return True
 
@@ -54,7 +54,7 @@ def is_balanced_parentheses():
         return False
 
 
-if __name__ == '__main__':  # main method
+if __name__ == '__main__':                          # main method
 
-    print(is_balanced_parentheses())
+    print(is_balanced_parentheses())                # calling in main method
 
