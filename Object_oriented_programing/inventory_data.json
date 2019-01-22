@@ -1,0 +1,53 @@
+{
+  "Rice": [
+    {
+      "name": "Brown_rice",
+      "weight": 50,
+      "price per kg": 30
+    },
+    {
+      "name": "Basmati",
+      "weight": 100,
+      "price per kg": 40
+    },
+    {
+      "name": "White_rice",
+      "weight": 70,
+      "price per kg": 50
+    }
+  ],
+  "Wheat": [
+    {
+      "name": "Spelt",
+      "weight": 5,
+      "price per kg": 20
+    },
+    {
+      "name": "Rey",
+      "weight": 6,
+      "price per kg": 25
+    },
+    {
+      "name": "Buckwheat",
+      "weight": 7,
+      "price per kg": 30
+    }
+  ],
+  "Pulse": [
+    {
+      "name": "Faba_beans",
+      "weight": 2,
+      "price per kg": 30
+    },
+    {
+      "name": "Dry_peas",
+      "weight": 3,
+      "price per kg": 40
+    },
+    {
+      "name": "chickpeas",
+      "weight": 4,
+      "price per kg": 50
+    }
+  ]
+}
