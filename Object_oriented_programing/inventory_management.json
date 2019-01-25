@@ -1,0 +1,19 @@
+{
+    "stock": [
+        {
+            "stock_name": "IBM",
+            "number_of_shares": 20,
+            "share_price": 200
+        },
+        {
+            "stock_name": "ICICI",
+            "number_of_shares": 30,
+            "share_price": 250
+        },
+        {
+            "stock_name": "AXIS",
+            "number_of_shares": 40,
+            "share_price": 300
+        }
+    ]
+}{"stock_name": "SBI"}{"stock_name": "SBI"}["sbi", 34, 500]
