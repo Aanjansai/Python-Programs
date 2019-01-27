@@ -1,19 +1,54 @@
 {
-    "stock": [
-        {
-            "stock_name": "IBM",
-            "number_of_shares": 20,
-            "share_price": 200
-        },
-        {
-            "stock_name": "ICICI",
-            "number_of_shares": 30,
-            "share_price": 250
-        },
-        {
-            "stock_name": "AXIS",
-            "number_of_shares": 40,
-            "share_price": 300
-        }
-    ]
-}{"stock_name": "SBI"}{"stock_name": "SBI"}["sbi", 34, 500]
+  "stock": [
+    {
+      "stock_name": "IBM",
+      "number_of_shares": 20,
+      "share_price": 200
+    },
+    {
+      "stock_name": "ICICI",
+      "number_of_shares": 30,
+      "share_price": 250
+    },
+    {
+      "stock_name": "AXIS",
+      "number_of_shares": 40,
+      "share_price": 300
+    },
+    {
+      "Stock Name": "axis",
+      "Number of Share": 20,
+      "Share Price": 500
+    },
+    {
+      "Stock Name": "infosys",
+      "Number of Share": 3,
+      "Share Price": 300
+    },
+    {
+      "Stock Name": "bee",
+      "Number of Share": 2,
+      "Share Price": 200
+    },
+    {
+      "Stock Name": "bridgelabz",
+      "Number of Share": 4,
+      "Share Price": 400
+    },
+    {
+      "Stock Name": "imb",
+      "Number of Share": 2,
+      "Share Price": 300
+    },
+    {
+      "Stock Name": "cbt",
+      "Number of Share": 2,
+      "Share Price": 200
+    },
+    {
+      "Stock Name": "hi",
+      "Number of Share": 2,
+      "Share Price": 200
+    }
+  ]
+}

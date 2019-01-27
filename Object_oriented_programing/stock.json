@@ -1,0 +1,94 @@
+{
+  "Stock Report": [
+    {
+      "Stock Name": "Google",
+      "Number of Share": 26,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Micro",
+      "Number of Share": 16,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "IBMComp",
+      "Number of Share": 20,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Facebk",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Oracle",
+      "Number of Share": 3,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Flipkt",
+      "Number of Share": 8,
+      "Share Price": 10000
+    },
+    {
+      "Stock Name": "BridgeL",
+      "Number of Share": 80,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "WiproC",
+      "Number of Share": 12,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Marvel",
+      "Number of Share": 20,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "Info",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "TataCon",
+      "Number of Share": 20,
+      "Share Price": 1500
+    },
+    {
+      "Stock Name": "xyzab",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "abcd",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "pqrs",
+      "Number of Share": 115,
+      "Share Price": 1200
+    },
+    {
+      "Stock Name": "lmno",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "beans",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "netwins",
+      "Number of Share": 10,
+      "Share Price": 1000
+    },
+    {
+      "Stock Name": "ner",
+      "Number of Share": 10,
+      "Share Price": 1000
+    }
+  ]
+}
