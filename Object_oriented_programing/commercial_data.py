@@ -1,3 +1,8 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 26/01/19
+
+
 """ Commercial data processing - StockAccount.java implements a data type that might be used by a
     financial institution to keep track of customer information. The StockAccount class implements following methods
     The StockAccount class also maintains a list of CompanyShares object which has Stock Symbol and
@@ -9,6 +14,9 @@ import json
 
 
 class Person:
+    """ this class is created to add the stock by the admin
+        and user can buy sell their share in the market
+    """
     try:
         def __init__(self):
             with open("stock.json", "r") as jf:
@@ -19,13 +27,12 @@ class Person:
                 person_json_value = json.load(person_json_value)
             self.person_json_value = person_json_value
 
-        def show_shares(self):
+        def show_shares(self):                        # this is to show the shares
             for number_of_shares in range(len(
                     self.stock_jf['Stock Report'])):  # Iterating through Stock Report by means of checking the length
                 print(number_of_shares, self.stock_jf['Stock Report'][number_of_shares])
 
-        def check_validity(self):
-
+        def check_validity(self):                      # this method is to verify the user
             number = 0
             name = input("Enter Username\n")
             while number < len(self.person_json_value["Person"]):  # Creating the user for buying or selling a shares
@@ -35,9 +42,9 @@ class Person:
                     print("....Login successful....")
                     c = int(input("1:Buy shares\n2:Sell shares:"))
                     if c == 1:
-                        p.buy_share(index)
+                        person_object.buy_share(index)
                     elif c == 2:
-                        p.sell_share(index)
+                        person_object.sell_share(index)
 
                     else:
                         print("wrong Input")
@@ -76,6 +83,7 @@ class Person:
                 print("Total amount you have to pay for ", buy_share, " stocks : ", amount_pay, "\n")
                 updated_stock_share = self.stock_jf["Stock Report"][choice]["Number of Share"] - buy_share
                 # Updating the stock
+
                 with open("stock.json", "w") as jf:                    # Changing the updated stock in a file
                     self.stock_jf["Stock Report"][choice]["Number of Share"] = updated_stock_share
                     jf.write(json.dumps(self.stock_jf, indent=2))
@@ -94,7 +102,7 @@ class Person:
             else:
                 print("You Don't have enough money \n")
 
-        def sell_share(self, index):
+        def sell_share(self, index):                            # this method is to sell the shares
             print('Enter choice to sell your share to particular company\n')
             for i in range(len(self.stock_jf['Stock Report'])):
                 print(i, self.stock_jf['Stock Report'][i])
@@ -132,8 +140,8 @@ class Person:
 
 
 if __name__ == "__main__":
-    p = Person()
-    p.show_shares()
+    person_object = Person()                                        # object for person class
+    person_object.show_shares()
     print("\n")
     try:
         i = int(input("1: Admin Login or 2: User \n"))
@@ -141,10 +149,10 @@ if __name__ == "__main__":
             print("welcome Admin")
             j = int(input("press 1 to add Company :\n"))
             if j == 1:
-                p.add_new_company()
+                person_object.add_new_company()
         elif i == 2:                                                # if user selects as User
             print("fill your details\n")
-            p.check_validity()
+            person_object.check_validity()
 
         else:
             print("Invalid choice")

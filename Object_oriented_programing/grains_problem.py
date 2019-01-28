@@ -1,3 +1,7 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 21/01/19
+
 """ Desc -> Create a JSON file having Inventory Details for Rice, Pulses and
     Wheat with properties name, weight, price per kg.
     Use Library : Java JSON Library, For IOS JSON Library use NSJSONSerialization for parsing the JSON.

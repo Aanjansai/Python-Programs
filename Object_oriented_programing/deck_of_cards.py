@@ -1,3 +1,6 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 22/01/19
 
 """ Write a Program DeckOfCards, to initialize deck of cards having suit ("Clubs", "Diamonds", "Hearts", "Spades")
     & Rank ("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace").
@@ -22,7 +25,8 @@ class Cards:                                        # This class is created for 
         """
         """ This itertools module  standardizes a core set of fast, memory efficient tools that are 
             useful by themselves or in combination. Together, they form an “iterator algebra” making it possible 
-            to construct specialized tools succinctly and efficiently in pure Python."""
+            to construct specialized tools succinctly and efficiently in pure Python.
+        """
         deck_of_cards = list(itertools.product(
             ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'king', 'queen', 'jack', 'ace'],
             ['clubs', 'diamonds', 'hearts', 'spades']))

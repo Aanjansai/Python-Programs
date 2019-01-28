@@ -1,27 +1,20 @@
 # author: Sai Anjan
 # task  : Object Oriented programming
-# date  : 23/01/19
+# date  : 26/01/19
 
-""" Desc -> Extend the above program to Create InventoryManager to manage the Inventory.
-    The Inventory Manager will use InventoryFactory to create Inventory Object from JSON.
-    The InventoryManager will call each Inventory Object in its list to calculate the Inventory Price
-    and then call the Inventory Object to return the JSON String. The main program will be with InventoryManager
-    I/P -> read in JSON File
-    Logic -> Get JSON Object in Java or NSDictionary in iOS. Create Inventory Object from JSON.
-    Calculate the value for every Inventory.
-    O/P -> Create the JSON from Inventory Object and output the JSON String.
+""" Maintain the List of CompanyShares in a Linked List So new CompanyShares can be added or removed easily.
+    Do not use any Collection Library to implement Linked List.
 """
-
 import json
 from UtilityMethods.ds_utility import *
 
 
-class InventoryManagement:
+class CommercialLinkedList:
     """ This class is created to add the stock data to
         the inventory management
     """
 
-    def inventory_management(self):                           # This method is used to add and delete the data in stock
+    def commercial_linked_list(self):                        # This method is used to add and delete the data in stock
 
         linked_list_object = LinkedList()
         with open("inventory_management.json", "r") as file:  # converting json file to python
@@ -69,14 +62,7 @@ class InventoryManagement:
         print(data)
 
 
-inventory_object = InventoryManagement()                    # inventory object is created
+commercial_object = CommercialLinkedList()                    # inventory object is created
 
 if __name__ == '__main__':
-    inventory_object.inventory_management()                 # inventory management method is called
-
-
-
-
-
-
-
+    commercial_object.commercial_linked_list()                 # inventory management method is called

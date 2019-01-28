@@ -49,6 +49,16 @@
       "Stock Name": "hi",
       "Number of Share": 2,
       "Share Price": 200
+    },
+    {
+      "Stock Name": "nokia",
+      "Number of Share": 4,
+      "Share Price": 400
+    },
+    {
+      "Stock Name": "funclub",
+      "Number of Share": 3,
+      "Share Price": 200
     }
   ]
 }

@@ -1,3 +1,7 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 27/01/19
+
 """ Further maintain the Stock Symbol Purchased or Sold in a Stack implemented using Linked List
     to indicate transactions done.
 """
@@ -8,14 +12,18 @@ import datetime
 import json
 
 
-stack1 = StackLinked()
+stack1 = StackLinked()                                          # object is created for stack
 
 
 class Person:
+    """ this class is created to add the stock by admin and
+        users can sell and buy their shares in the market.
+        insertion and deletion of users are implemented by stack
+    """
     try:
         def __init__(self):
             with open("stock.json", "r") as stock_jf:
-                stock_jf = json.load(stock_jf)              # load() convert file into python from json
+                stock_jf = json.load(stock_jf)                   # load() convert file into python from json
 
             self.stock_jf = stock_jf
             with open("customers.json", "r") as person_json_value:
@@ -30,6 +38,7 @@ class Person:
         def check_validity(self):
             number = 0
             name = input("Enter Username\n")
+
             while number < len(self.person_json_value["Person"]):  # Creating the user for buying or selling a shares
                 if self.person_json_value["Person"][number]["Name"] == name.title():  # Verifying the user
                     index = number
@@ -37,9 +46,9 @@ class Person:
                     print("....Login successful....")
                     c = int(input("1:Buy shares\n2:Sell shares:"))
                     if c == 1:
-                        p.buy_share(index, name)
+                        person_object.buy_share(index, name)
                     elif c == 2:
-                        p.sell_share(index, name)
+                        person_object.sell_share(index, name)
 
                     else:
                         print("wrong Input")
@@ -61,7 +70,7 @@ class Person:
 
                 stock_jf.write(json.dumps(self.stock_jf, indent=2))  # Writing a file through python to json
 
-        def buy_share(self, index, name):
+        def buy_share(self, index, name):                            # this method is used to buy shares
             for stock_report in range(len(self.stock_jf['Stock Report'])):
                 print(stock_report, self.stock_jf['Stock Report'][stock_report])
 
@@ -90,7 +99,8 @@ class Person:
                 dt = datetime.datetime.now()
                 stack1.push(
                     ("Buy", self.stock_jf["Stock Report"][choice]["Stock Name"], "Number of shares : ", buy_share))
-                with open("stack_transaction.txt", "a")as txt:      # to append the data
+
+                with open("stack_transaction.txt", "a")as txt:                  # to append the data to the file
                     txt.write(name + str(stack1.show()) + str(dt) + "\n")
                 print("stack show\n")
                 stack1.show()
@@ -103,10 +113,10 @@ class Person:
             else:
                 print("You Don't have enough money \n")
 
-        def sell_share(self, index, name):
+        def sell_share(self, index, name):                               # this method is used to show the share
             print('Enter choice to sell your share to particular company')
-            for i in range(len(self.stock_jf['Stock Report'])):
-                print(i, self.stock_jf['Stock Report'][i])
+            for share in range(len(self.stock_jf['Stock Report'])):
+                print(share, self.stock_jf['Stock Report'][share])
 
             choice = int(input("Enter choice in Int"))
 
@@ -114,7 +124,8 @@ class Person:
                   'company')
             sell_share = int(input("Number of shares to sell "))
             updated_stock_share = self.stock_jf["Stock Report"][choice]["Number of Share"] + sell_share
-            with open("stock.json", "w") as jf:                 # open file to write
+
+            with open("stock.json", "w") as jf:                         # open file to write and dump
                 self.stock_jf["Stock Report"][choice]["Number of Share"] = updated_stock_share
                 jf.write(json.dumps(self.stock_jf, indent=2))
 
@@ -128,16 +139,18 @@ class Person:
             print('Now Your Updated Balance is ', person_updated_balance, "\n")
 
             print('Now Your Updated Number of share is ', updated_person_share, "\n")
-            st = datetime.datetime.now()                # to show the user date for entering details
+            st = datetime.datetime.now()                             # to show the user date for entering details
 
             stack1.push(("Sold", self.stock_jf["Stock Report"][choice]["Stock Name"], "Number of shares :", sell_share))
+
             with open("stack_transaction.txt", "a")as txt:
                 txt.write(name + str(stack1.show()) + str(st) + "\n")
             print("stack show")
             stack1.show()
             stack1.push("S")
             stack1.show()
-            with open("customers.json", "w") as jf:   # open file to write the details
+
+            with open("customers.json", "w") as jf:                 # open file to write the details
                 self.person_json_value['Person'][index]['Total Balance'] = person_updated_balance
                 self.person_json_value['Person'][index]['Number of Share'] = updated_person_share
                 jf.write(json.dumps(self.person_json_value, indent=2))
@@ -147,19 +160,19 @@ class Person:
 
 
 if __name__ == "__main__":
-    p = Person()
-    p.show_shares()
+    person_object = Person()                                # person object is created
+    person_object.show_shares()
     print("\n")
     try:
         i = int(input("1: Admin Login or 2: User \n"))
-        if i == 1:                   # If user selects as Admin
+        if i == 1:                                          # If user selects as Admin
             print("welcome Admin")
             j = int(input("press 1 to add Company :\n"))
             if j == 1:
-                p.add_new_company()
-        elif i == 2:                # if user selects as User
+                person_object.add_new_company()
+        elif i == 2:                                        # if user selects as User
             print("fill your details\n")
-            p.check_validity()
+            person_object.check_validity()
 
         else:
             print("Invalid choice")

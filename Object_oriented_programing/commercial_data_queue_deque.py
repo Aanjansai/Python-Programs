@@ -1,3 +1,7 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 27/01/19
+
 """ Further maintain DateTime of the transaction in a Queue implemented using Linked List to indicate
     when the transactions were done.
 """
@@ -7,10 +11,13 @@ from UtilityMethods.ds_utility import QueueLinked
 import datetime
 import json
 
-queue = QueueLinked()
+queue = QueueLinked()                                              # queue object is created to implement queue
 
 
 class Person:
+    """ this class is created to add the stock by admin and user can buy and sell
+        their shares by implementing queue data structure
+    """
     try:
         def __init__(self):
             with open("stock.json", "r") as stock_jf:
@@ -35,9 +42,9 @@ class Person:
                     print("....Login successful....")
                     c = int(input("1:Buy shares\n2:Sell shares:"))
                     if c == 1:
-                        p.buy_share(index, name)
+                        person_object.buy_share(index, name)
                     elif c == 2:
-                        p.sell_share(index, name)
+                        person_object.sell_share(index, name)
 
                     else:
                         print("wrong Input")
@@ -77,6 +84,7 @@ class Person:
                 print("Total amount you have to pay for ", buy_share, " stocks : ", amount_pay)
                 updated_stock_share = self.stock_jf["Stock Report"][choice]["Number of Share"] - buy_share
                 # Updating the stock
+
                 with open("stock.json", "w") as jf:  # Changing the updated stock in a file
                     self.stock_jf["Stock Report"][choice]["Number of Share"] = updated_stock_share
                     jf.write(json.dumps(self.stock_jf, indent=2))
@@ -87,17 +95,19 @@ class Person:
                 person_updated_share = self.person_json_value['Person'][index]['Number of Share'] + buy_share
                 # Adding the new shares in a stock
                 print('Now Your Updated Number of share is ', person_updated_share, "\n")
-                dt = datetime.datetime.now()        # to show the date
+                dt = datetime.datetime.now()                             # to show the date
 
                 queue.enqueue(      # adding stock details
                     ("Buy", self.stock_jf["Stock Report"][choice]["Stock Name"], "Number of shares : ", buy_share))
-                with open("stack_transaction.txt", "a")as txt:
+
+                with open("stack_transaction.txt", "a")as txt:          # open file to append data
                     txt.write(name + str(queue.show()) + str(dt) + "\n")
                 print("stack show")
                 queue.show()
                 queue.enqueue("B")
                 queue.show()
-                with open("customers.json", "w") as jf:  # open a file to write data
+
+                with open("customers.json", "w") as jf:                  # open a file to write data
                     self.person_json_value['Person'][index]['Total Balance'] = person_updated_balance
                     self.person_json_value['Person'][index]['Number of Share'] = person_updated_share
                     jf.write(json.dumps(self.person_json_value))
@@ -106,6 +116,8 @@ class Person:
 
         def sell_share(self, index, name):
             print('Enter choice to sell your share to particular company\n')
+
+            # this loop is used to show the share of shock report
             for share in range(len(self.stock_jf['Stock Report'])):
                 print(share, self.stock_jf['Stock Report'][share])
 
@@ -115,6 +127,7 @@ class Person:
                   'company', "\n")
             sell_share = int(input("Number of shares to sell "))
             updated_stock_share = self.stock_jf["Stock Report"][choice]["Number of Share"] + sell_share
+
             with open("stock.json", "w") as jf:     # open a file to dump data (python to json)
                 self.stock_jf["Stock Report"][choice]["Number of Share"] = updated_stock_share
                 jf.write(json.dumps(self.stock_jf, indent=2))
@@ -137,7 +150,8 @@ class Person:
             queue.show()
             queue.enqueue("S")
             queue.show()
-            with open("customers.json", "w") as jf:   # open file to write the user details
+
+            with open("customers.json", "w") as jf:                  # open file to write the user details
                 self.person_json_value['Person'][index]['Total Balance'] = person_updated_balance
                 self.person_json_value['Person'][index]['Number of Share'] = updated_person_share
                 jf.write(json.dumps(self.person_json_value, indent=2))
@@ -148,19 +162,19 @@ class Person:
 
 if __name__ == "__main__":
     while True:
-        p = Person()
-        p.view_shares()
+        person_object = Person()                        # object for person class
+        person_object.view_shares()
         print("\n")
         try:
             i = int(input("1: Admin Login or 2: User \n"))
-            if i == 1:              # To enter as admin
+            if i == 1:                                  # To enter as admin
                 print("welcome Admin")
                 j = int(input("1 to add Company :\n"))
                 if j == 1:
-                    p.add_new_company()
-            elif i == 2:            # To enter as user
+                    person_object.add_new_company()
+            elif i == 2:                                # To enter as user
                 print("Welcome User")
-                p.check_validity()
+                person_object.check_validity()
 
             else:
                 print("Invalid choice")

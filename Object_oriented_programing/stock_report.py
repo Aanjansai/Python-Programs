@@ -1,3 +1,7 @@
+# author: Sai Anjan
+# task  : Object Oriented programming
+# date  : 25/01/19
+
 """ Desc -> Write a program to read in Stock Names, Number of Share, Share Price.
     Print a Stock Report with total value of each Stock and the total value of Stock.
     I/P -> N number of Stocks, for Each Stock Read In the Share Name, Number of Share, and Share Price
@@ -44,8 +48,9 @@ class StockData:
         print("===>", "The total value of stock =", self.stock_total_value)
 
 
+# super class stock data is inherited
 class StockValues(StockData):                       # This class is created to hold the stock values
-    def __init__(self):
+    def __init__(self):                             # method is override
         StockData.__init__(self)
         self.stock_data_object = StockData()        # Stock data objected is created
 
