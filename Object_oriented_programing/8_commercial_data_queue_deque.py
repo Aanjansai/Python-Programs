@@ -20,10 +20,10 @@ class Person:
     """
     try:
         def __init__(self):
-            with open("stock.json", "r") as stock_jf:
-                stock_jf = json.load(stock_jf)                      # load() convert file into python from json
+            with open("stock.json", "r") as stock_json_file:
+                stock_json_file = json.load(stock_json_file)      # load() convert file into python from json
 
-            self.stock_jf = stock_jf
+            self.stock_jf = stock_json_file
             with open("customers.json", "r") as person_json_value:
                 person_json_value = json.load(person_json_value)
             self.person_json_value = person_json_value
@@ -34,22 +34,22 @@ class Person:
 
         def check_validity(self):
             number = 0
-            name = input("Enter Username")
-            while number < len(self.person_json_value["Person"]):  # Creating the user for buying or selling a shares
-                if self.person_json_value["Person"][number]["Name"] == name.title():  # Verifying the user
-                    index = number
-                    print(self.person_json_value["Person"][number])
-                    print("....Login successful....")
-                    c = int(input("1:Buy shares\n2:Sell shares:"))
-                    if c == 1:
-                        person_object.buy_share(index, name)
-                    elif c == 2:
-                        person_object.sell_share(index, name)
+            name = input("Enter Username\n")
+            # while number < len(self.person_json_value["Person"]):  # Creating the user for buying or selling a shares
+            #  if self.person_json_value["Person"][number]["Name"] == name.title():  # Verifying the user
+            index = number
+            print(self.person_json_value["Person"][number])
+            print("....Login successful....")
+            c = int(input("1:Buy shares\n2:Sell shares:\n"))
+            if c == 1:
+                person_object.buy_share(index, name)
+            elif c == 2:
+                person_object.sell_share(index, name)
 
-                    else:
-                        print("wrong Input")
+            else:
+                print("wrong Input")
 
-                number += 1
+            number += 1
 
         def add_new_company(self):                               # Add a new company by adding a new through dictionary
             name = input("Enter company name\n")
@@ -104,7 +104,7 @@ class Person:
                     txt.write(name + str(queue.show()) + str(dt) + "\n")
                 print("stack show")
                 queue.show()
-                queue.enqueue("B")
+                queue.enqueue("Brought")
                 queue.show()
 
                 with open("customers.json", "w") as jf:                  # open a file to write data
@@ -121,11 +121,11 @@ class Person:
             for share in range(len(self.stock_jf['Stock Report'])):
                 print(share, self.stock_jf['Stock Report'][share])
 
-            choice = int(input("Enter choice in Int"))
+            choice = int(input("Enter choice in Int\n"))
 
             print('Enter Number of share you want to sell to', self.stock_jf['Stock Report'][choice]['Stock Name'],
                   'company', "\n")
-            sell_share = int(input("Number of shares to sell "))
+            sell_share = int(input("Number of shares to sell \n"))
             updated_stock_share = self.stock_jf["Stock Report"][choice]["Number of Share"] + sell_share
 
             with open("stock.json", "w") as jf:     # open a file to dump data (python to json)
@@ -148,7 +148,7 @@ class Person:
                            "Number of shares :", sell_share))
             print("stack show")
             queue.show()
-            queue.enqueue("S")
+            queue.enqueue("Sold")
             queue.show()
 
             with open("customers.json", "w") as jf:                  # open file to write the user details
