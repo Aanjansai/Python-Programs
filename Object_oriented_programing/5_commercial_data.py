@@ -40,10 +40,10 @@ class Person:
             index = number
             print(self.person_json_value["Person"][number])
             print("....Login successful....")
-            c = int(input("1:Buy shares\n2:Sell shares:\n"))
-            if c == 1:
+            read_input = int(input("1:Buy shares\n2:Sell shares:\n"))
+            if read_input == 1:
                 person_object.buy_share(index)
-            elif c == 2:
+            elif read_input == 2:
                 person_object.sell_share(index)
 
             else:
@@ -104,8 +104,8 @@ class Person:
 
         def sell_share(self, index):                            # this method is to sell the shares
             print('Enter choice to sell your share to particular company\n')
-            for i in range(len(self.stock_jf['Stock Report'])):
-                print(i, self.stock_jf['Stock Report'][i])
+            for share in range(len(self.stock_jf['Stock Report'])):
+                print(share, self.stock_jf['Stock Report'][share])
 
             choice = int(input("Enter choice \n"))
 
@@ -144,13 +144,13 @@ if __name__ == "__main__":
     person_object.show_shares()
     print("\n")
     try:
-        i = int(input("1: Admin Login or 2: User \n"))
-        if i == 1:                                                  # If user selects as Admin
+        read_input = int(input("1: Admin Login or 2: User \n"))
+        if read_input == 1:                                                  # If user selects as Admin
             print("welcome Admin")
-            j = int(input("press 1 to add Company :\n"))
-            if j == 1:
+            read_input1 = int(input("press 1 to add Company :\n"))
+            if read_input1 == 1:
                 person_object.add_new_company()
-        elif i == 2:                                                # if user selects as User
+        elif read_input == 2:                                                # if user selects as User
             print("fill your details\n")
             person_object.check_validity()
 

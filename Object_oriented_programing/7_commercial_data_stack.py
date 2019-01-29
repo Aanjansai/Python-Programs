@@ -44,10 +44,10 @@ class Person:
             index = number
             print(self.person_json_value["Person"][number])
             print("....Login successful....")
-            c = int(input("1:Buy shares\n2:Sell shares:\n"))
-            if c == 1:
+            read_input = int(input("1:Buy shares\n2:Sell shares:\n"))
+            if read_input == 1:
                 person_object.buy_share(index, name)
-            elif c == 2:
+            elif read_input == 2:
                 person_object.sell_share(index, name)
 
             else:
@@ -164,13 +164,13 @@ if __name__ == "__main__":
     person_object.show_shares()
     print("\n")
     try:
-        i = int(input("1: Admin Login or 2: User \n"))
-        if i == 1:                                          # If user selects as Admin
+        read_input_1 = int(input("1: Admin Login or 2: User \n"))
+        if read_input_1 == 1:                                          # If user selects as Admin
             print("welcome Admin")
-            j = int(input("press 1 to add Company :\n"))
-            if j == 1:
+            read_input_2 = int(input("press 1 to add Company :\n"))
+            if read_input_2 == 1:
                 person_object.add_new_company()
-        elif i == 2:                                        # if user selects as User
+        elif read_input_1 == 2:                                        # if user selects as User
             print("fill your details\n")
             person_object.check_validity()
 

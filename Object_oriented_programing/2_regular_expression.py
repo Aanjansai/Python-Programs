@@ -50,6 +50,8 @@ class RegularExpression:                    # This method is created to display 
 object1 = RegularExpression()
 
 if __name__ == '__main__':
-    object1.regex_method()                                      # calling regex method
-
+    try:
+        object1.regex_method()                                      # calling regex method
+    except UnboundLocalError:
+        print("try again by entering the valid data")
 

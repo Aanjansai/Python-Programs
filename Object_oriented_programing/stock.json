@@ -24,26 +24,7 @@
       "Stock Name": "Oracle",
       "Number of Share": 2,
       "Share Price": 1000
-    },
-    {
-      "Stock Name": "Flipkt",
-      "Number of Share": 8,
-      "Share Price": 10000
-    },
-    {
-      "Stock Name": "BridgeL",
-      "Number of Share": 80,
-      "Share Price": 1000
-    },
-    {
-      "Stock Name": "WiproC",
-      "Number of Share": 12,
-      "Share Price": 1000
-    },
-    {
-      "Stock Name": "Marvel",
-      "Number of Share": 48,
-      "Share Price": 1000
     }
+
   ]
 }
